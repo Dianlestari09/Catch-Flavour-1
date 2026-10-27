@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Match The Flavour</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div id="game-container">
+        <!-- Wadah Partikel (Bintang/Api) -->
+        <div id="particles-container"></div>
+
+        <!-- MENU SCREEN -->
+        <div id="menu-screen" class="screen">
+            <!-- LOGO UTAMA (IMAGE) -->
+            <!-- Pastikan file match.png ada di folder yang sama dengan index.html -->
+            <img src="assets/images/match.png" alt="Match The Flavour" class="main-logo">
+
+            <div class="glass-card">
+                <div class="input-wrapper">
+                    <input type="text" id="player-name-input" placeholder="Nama Pemain" maxlength="12"
+                        autocomplete="off">
+                    <span class="input-icon">👤</span>
+                </div>
+
+                <button class="btn btn-primary btn-pulse" onclick="startGame()">Mulai Game</button>
+            </div>
+        </div>
+
+        <!-- GAME SCREEN -->
+        <div id="game-screen" class="screen hidden">
+            <div id="game-ui">
+                <!-- LOGO KECIL (IMAGE) -->
+                <img src="assets/images/match.png" alt="Match The Flavour" class="game-logo-small">
+
+                <div class="hud">
+                    <div class="hud-box">
+                        <span class="hud-label">WAKTU</span>
+                        <span id="timer-display">15s</span>
+                    </div>
+                    <div class="hud-box">
+                        <span class="hud-label">SKOR</span>
+                        <span id="score-display">0</span>
+                    </div>
+                </div>
+
+                <div class="grid-container" id="grid"></div>
+                <div id="status-msg"></div>
+            </div>
+        </div>
+
+        <!-- FINISH SCREEN -->
+        <div id="finish-screen" class="screen hidden">
+            <h1 id="finish-title" class="title-glow" style="font-size: 2.5rem;">Selesai!</h1>
+
+            <div class="glass-card">
+                <p style="color: #ddd; margin: 0; font-size: 0.9rem;">Skor Akhir</p>
+                <h2 id="final-score" style="font-size: 3.5rem; margin: 5px 0; color: #fff;">0</h2>
+                <h3 id="final-name"
+                    style="color: #f1c40f; margin-top: 0; margin-bottom: 20px; font-size: 1.5rem; text-transform: uppercase;">
+                    Player</h3>
+
+                <button class="btn btn-outlined" onclick="toMainMenu()">Menu Utama</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="audio-container">
+        <audio id="bgm-menu" src="assets/audio/bgm_menu.mp3" loop></audio>
+        <audio id="bgm-game" src="assets/audio/bgm_game.mp3" loop></audio>
+
+        <audio id="sfx-countdown" src="assets/audio/alert.mp3"></audio>
+        <audio id="sfx-click" src="assets/audio/click.mp3"></audio>
+        <audio id="sfx-flip" src="assets/audio/flip.mp3"></audio>
+        <audio id="sfx-win" src="assets/audio/win.mp3"></audio>
+        <audio id="sfx-over" src="assets/audio/gameover.mp3"></audio>
+
+        <audio id="sfx-sparkle" src="assets/audio/sparkle.mp3"></audio>
+        <audio id="sfx-boom" src="assets/audio/boom.mp3"></audio>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
